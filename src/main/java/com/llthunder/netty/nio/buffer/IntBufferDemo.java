@@ -2,7 +2,10 @@ package com.llthunder.netty.nio.buffer;
 
 import java.nio.IntBuffer;
 
-public class IntbufferDemo {
+/**
+ * buffer操作基本API示例
+ */
+public class IntBufferDemo {
 
     public static void main(String[] args) {
         //buffer中共有3个属性
@@ -20,7 +23,7 @@ public class IntbufferDemo {
         while (intBuffer.hasRemaining()){
             //读取缓冲区当前position位置的数据，知道position=limit
             int j = intBuffer.get();
-            System.out.println(j);
+            System.out.print(j + "   ");
         }
     }
 }
