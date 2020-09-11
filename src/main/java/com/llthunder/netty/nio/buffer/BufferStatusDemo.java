@@ -1,7 +1,5 @@
 package com.llthunder.netty.nio.buffer;
 
-import com.sun.org.apache.bcel.internal.util.ClassPath;
-
 import java.io.*;
 import java.nio.Buffer;
 import java.nio.ByteBuffer;
@@ -10,11 +8,11 @@ import java.nio.channels.FileChannel;
 /**
  * buffer基本示例:演示position/limit/capacity的变化
  */
-public class BufferDemo {
+public class BufferStatusDemo {
 
     public static void main(String[] args) throws IOException {
         //读取文件流，此处操作时I/O操作
-        String fileUrl = BufferDemo.class.getClassLoader().getResource("BufferDemoText.text").getFile();
+        String fileUrl = BufferStatusDemo.class.getClassLoader().getResource("BufferDemoText.text").getFile();
         FileInputStream inputStream = new FileInputStream(fileUrl);
         FileChannel inputChannel = inputStream.getChannel();
         //创建一个大小为10的缓冲区
@@ -33,7 +31,6 @@ public class BufferDemo {
         byteBuffer.clear();
         out("调用clear", byteBuffer);
         //关闭流
-        inputChannel.close();
         inputStream.close();
     }
 
